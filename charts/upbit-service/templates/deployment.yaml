@@ -88,5 +88,3 @@ env:
     value: {{ .Values.env.KAFKA_CONSUMER_CANDLE | quote }}
   - name: KAFKA_TOPIC_CANDLE
     value: {{ .Values.env.KAFKA_TOPIC_CANDLE | quote }}
-  - name: SERVER_PORT
-    value: {{ .Values.env.SERVER_PORT | quote }}
