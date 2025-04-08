@@ -54,6 +54,8 @@ spec:
               value: {{ .Values.env.KAFKA_CONSUMER_CANDLE | quote }}
             - name: KAFKA_TOPIC_CANDLE
               value: {{ .Values.env.KAFKA_TOPIC_CANDLE | quote }}
+            - name: KAFKA_TOPIC_TICKER
+              value: {{ .Values.env.KAFKA_TOPIC_TICKER | quote }}
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
