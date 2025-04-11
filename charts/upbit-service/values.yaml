@@ -130,3 +130,7 @@ env:
   KAFKA_CONSUMER_CANDLE: market_candle_group
   KAFKA_TOPIC_CANDLE: market_candle
   KAFKA_TOPIC_TICKER: market_ticker
+
+  REDIS_HOST: 172.16.10.61
+  REDIS_PORT: 6379
+  POSTGRE_URL: jdbc:postgresql://172.16.10.51:5432/postgres
