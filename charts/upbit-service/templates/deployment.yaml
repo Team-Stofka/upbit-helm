@@ -56,6 +56,22 @@ spec:
               value: {{ .Values.env.KAFKA_TOPIC_CANDLE | quote }}
             - name: KAFKA_TOPIC_TICKER
               value: {{ .Values.env.KAFKA_TOPIC_TICKER | quote }}
+            - name: REDIS_HOST
+              value: {{ .Values.env.REDIS_HOST | quote }}
+            - name: REDIS_PORT
+              value: {{ .Values.env.REDIS_PORT | quote }}
+            - name: POSTGRE_URL
+              value: {{ .Values.env.POSTGRE_URL | quote }}
+            - name: POSTGRE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: upbit-service-secret
+                  key: POSTGRE_USERNAME
+            - name: POSTGRE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: upbit-service-secret
+                  key: POSTGRE_PASSWORD
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
