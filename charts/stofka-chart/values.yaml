@@ -63,12 +63,11 @@ ingress:
   className: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/use-regex: "true"
   hosts:
     - host: stofka.naver.com
       paths:
-        - path: /?(.*)
-          pathType: ImplementationSpecific
+        - path: /
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
