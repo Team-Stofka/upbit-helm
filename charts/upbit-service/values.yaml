@@ -69,6 +69,10 @@ ingress:
           pathType: Prefix
         - path: /stream/ticker
           pathType: Prefix
+        - path: /sse/connect
+          pathType: Prefix
+        - path: /candles
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
