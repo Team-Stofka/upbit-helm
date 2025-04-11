@@ -59,16 +59,18 @@ service:
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
   hosts:
-    - host: chart-example.local
+    - host: stofka.naver.com
       paths:
-        - path: /
-          pathType: ImplementationSpecific
+        - path: /stream/candle
+          pathType: Prefix
+        - path: /stream/ticker
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
