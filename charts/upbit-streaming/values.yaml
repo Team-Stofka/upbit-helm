@@ -65,7 +65,7 @@ ingress:
   hosts:
     - host: stofka.naver.com
       paths:
-        - path: /actuator/prometheus
+        - path: /actuator/prometheus/upbit-streaming
           pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
