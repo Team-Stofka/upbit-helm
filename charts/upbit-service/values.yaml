@@ -73,7 +73,7 @@ ingress:
           pathType: Prefix
         - path: /candles
           pathType: Prefix
-        - path: /actuator/prometheus/upbit-service
+        - path: /upbit-service/prometheus
           pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
