@@ -75,6 +75,8 @@ ingress:
           pathType: Prefix
         - path: /upbit-service/prometheus
           pathType: Prefix
+        - path: /check
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
